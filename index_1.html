@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmo Investment - SEBI Registered Investment Services | NISM Certified</title>
+    <meta name="description" content="Cosmo Investment - Your trusted partner for stocks, mutual funds, insurance, and investment services. SEBI Registered, NISM Certified with 8+ years experience.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__brand">
+                    <h1 class="brand-title">Cosmo Investment</h1>
+                    <div class="regulatory-badge">
+                        <span class="badge badge--sebi">SEBI REGISTERED</span>
+                        <span class="badge badge--nism">NISM CERTIFIED</span>
+                        <span class="badge badge--arn">ARN 313537</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li><a href="#home" class="nav__link">Home</a></li>
+                        <li><a href="#about" class="nav__link">About</a></li>
+                        <li><a href="#calculators" class="nav__link">Calculators</a></li>
+                        <li><a href="#services" class="nav__link">Services</a></li>
+                        <li><a href="#partners" class="nav__link">Partners</a></li>
+                        <li><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                    <div class="header__contact">
+                        <i class="fas fa-phone"></i>
+                        <span>7019276267</span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h2 class="hero__title">Your Gateway to Smart Investments</h2>
+                <p class="hero__subtitle">Professional investment advisory services with comprehensive portfolio management, insurance solutions, and market expertise backed by regulatory compliance.</p>
+                
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <strong>8+ Years</strong>
+                            <span>Experience</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <strong>1000+</strong>
+                            <span>Happy Clients</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <strong>SEBI</strong>
+                            <span>Registered</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero__actions">
+                    <a href="https://www.wealthy.in/partners/bharath55" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg cta-button">
+                        <i class="fas fa-user-plus"></i>
+                        Open Account
+                    </a>
+                    <a href="https://www.wealthy.in/partners/bharath55" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--lg cta-button">
+                        <i class="fas fa-chart-line"></i>
+                        Invest Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculators Section -->
+    <section id="calculators" class="calculators">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Financial Calculators</h2>
+                <p class="section-subtitle">Plan your investments and financial goals with our comprehensive calculators</p>
+            </div>
+
+            <div class="calculators-grid">
+                <!-- SIP Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>SIP Calculator</h3>
+                        <p>Calculate returns on Systematic Investment Plan</p>
+                    </div>
+                    <div class="calculator-body">
+                        <div class="form-group">
+                            <label class="form-label" for="sip-monthly">Monthly Investment (₹)</label>
+                            <input type="number" id="sip-monthly" class="form-control" placeholder="5000" min="500" step="500">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="sip-return">Expected Annual Return (%)</label>
+                            <input type="number" id="sip-return" class="form-control" placeholder="12" min="1" max="30" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="sip-years">Investment Period (Years)</label>
+                            <input type="number" id="sip-years" class="form-control" placeholder="10" min="1" max="50">
+                        </div>
+                        <button type="button" class="btn btn--primary btn--full-width" onclick="calculateSIP()">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                        <button type="button" class="btn btn--outline btn--full-width mt-8" onclick="resetSIP()">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                    <div class="calculator-result" id="sip-result" style="display: none;">
+                        <h4>SIP Results</h4>
+                        <div class="result-item">
+                            <span>Total Investment:</span>
+                            <span id="sip-total-investment">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Expected Returns:</span>
+                            <span id="sip-returns">₹0</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span>Maturity Amount:</span>
+                            <span id="sip-maturity">₹0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compound Interest Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-percentage"></i>
+                        <h3>Compound Interest Calculator</h3>
+                        <p>Calculate compound interest on investments</p>
+                    </div>
+                    <div class="calculator-body">
+                        <div class="form-group">
+                            <label class="form-label" for="ci-principal">Principal Amount (₹)</label>
+                            <input type="number" id="ci-principal" class="form-control" placeholder="100000" min="1000" step="1000">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="ci-rate">Annual Interest Rate (%)</label>
+                            <input type="number" id="ci-rate" class="form-control" placeholder="8" min="0.1" max="30" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="ci-frequency">Compounding Frequency</label>
+                            <select id="ci-frequency" class="form-control">
+                                <option value="1">Annually</option>
+                                <option value="4">Quarterly</option>
+                                <option value="12">Monthly</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="ci-time">Time Period (Years)</label>
+                            <input type="number" id="ci-time" class="form-control" placeholder="5" min="1" max="50">
+                        </div>
+                        <button type="button" class="btn btn--primary btn--full-width" onclick="calculateCI()">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                        <button type="button" class="btn btn--outline btn--full-width mt-8" onclick="resetCI()">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                    <div class="calculator-result" id="ci-result" style="display: none;">
+                        <h4>Compound Interest Results</h4>
+                        <div class="result-item">
+                            <span>Principal Amount:</span>
+                            <span id="ci-principal-result">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Compound Interest:</span>
+                            <span id="ci-interest">₹0</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span>Total Amount:</span>
+                            <span id="ci-total">₹0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investment Growth Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Investment Growth Calculator</h3>
+                        <p>Project investment growth over time</p>
+                    </div>
+                    <div class="calculator-body">
+                        <div class="form-group">
+                            <label class="form-label" for="ig-initial">Initial Investment (₹)</label>
+                            <input type="number" id="ig-initial" class="form-control" placeholder="50000" min="1000" step="1000">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="ig-monthly">Monthly Contribution (₹)</label>
+                            <input type="number" id="ig-monthly" class="form-control" placeholder="5000" min="0" step="500">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="ig-return">Expected Annual Return (%)</label>
+                            <input type="number" id="ig-return" class="form-control" placeholder="12" min="1" max="30" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="ig-years">Investment Duration (Years)</label>
+                            <input type="number" id="ig-years" class="form-control" placeholder="10" min="1" max="50">
+                        </div>
+                        <button type="button" class="btn btn--primary btn--full-width" onclick="calculateIG()">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                        <button type="button" class="btn btn--outline btn--full-width mt-8" onclick="resetIG()">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                    <div class="calculator-result" id="ig-result" style="display: none;">
+                        <h4>Investment Growth Results</h4>
+                        <div class="result-item">
+                            <span>Total Invested:</span>
+                            <span id="ig-total-invested">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Expected Growth:</span>
+                            <span id="ig-growth">₹0</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span>Final Value:</span>
+                            <span id="ig-final">₹0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EMI Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-home"></i>
+                        <h3>EMI Calculator</h3>
+                        <p>Calculate Equated Monthly Installment for loans</p>
+                    </div>
+                    <div class="calculator-body">
+                        <div class="form-group">
+                            <label class="form-label" for="emi-loan">Loan Amount (₹)</label>
+                            <input type="number" id="emi-loan" class="form-control" placeholder="1000000" min="10000" step="10000">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="emi-rate">Interest Rate (% per annum)</label>
+                            <input type="number" id="emi-rate" class="form-control" placeholder="8.5" min="1" max="20" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="emi-tenure">Loan Tenure (Years)</label>
+                            <input type="number" id="emi-tenure" class="form-control" placeholder="20" min="1" max="30">
+                        </div>
+                        <button type="button" class="btn btn--primary btn--full-width" onclick="calculateEMI()">
+                            <i class="fas fa-calculator"></i> Calculate EMI
+                        </button>
+                        <button type="button" class="btn btn--outline btn--full-width mt-8" onclick="resetEMI()">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                    <div class="calculator-result" id="emi-result" style="display: none;">
+                        <h4>EMI Results</h4>
+                        <div class="result-item highlight">
+                            <span>Monthly EMI:</span>
+                            <span id="emi-monthly">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Total Interest:</span>
+                            <span id="emi-total-interest">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Total Amount Payable:</span>
+                            <span id="emi-total-amount">₹0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goal Planning Calculator -->
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Goal Planning Calculator</h3>
+                        <p>Calculate required investment for financial goals</p>
+                    </div>
+                    <div class="calculator-body">
+                        <div class="form-group">
+                            <label class="form-label" for="gp-target">Target Amount (₹)</label>
+                            <input type="number" id="gp-target" class="form-control" placeholder="5000000" min="10000" step="10000">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="gp-current-age">Current Age (Years)</label>
+                            <input type="number" id="gp-current-age" class="form-control" placeholder="30" min="18" max="65">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="gp-target-age">Target Age (Years)</label>
+                            <input type="number" id="gp-target-age" class="form-control" placeholder="60" min="25" max="80">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="gp-return">Expected Return (% per annum)</label>
+                            <input type="number" id="gp-return" class="form-control" placeholder="12" min="1" max="30" step="0.1">
+                        </div>
+                        <button type="button" class="btn btn--primary btn--full-width" onclick="calculateGP()">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                        <button type="button" class="btn btn--outline btn--full-width mt-8" onclick="resetGP()">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                    <div class="calculator-result" id="gp-result" style="display: none;">
+                        <h4>Goal Planning Results</h4>
+                        <div class="result-item">
+                            <span>Investment Period:</span>
+                            <span id="gp-period">0 Years</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span>Required Monthly Investment:</span>
+                            <span id="gp-monthly-investment">₹0</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Total Investment:</span>
+                            <span id="gp-total-investment">₹0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive financial solutions tailored to your investment goals</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-category">
+                    <div class="service-category__header">
+                        <i class="fas fa-chart-area"></i>
+                        <h3>Investment Services</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li><i class="fas fa-building"></i>Brokerage Services</li>
+                        <li><i class="fas fa-chart-line"></i>Stocks & Equity</li>
+                        <li><i class="fas fa-coins"></i>Mutual Funds</li>
+                        <li><i class="fas fa-calendar-alt"></i>SIP (Systematic Investment Plan)</li>
+                        <li><i class="fas fa-star"></i>AIF (Alternative Investment Fund)</li>
+                        <li><i class="fas fa-briefcase"></i>PMS (Portfolio Management)</li>
+                        <li><i class="fas fa-wallet"></i>Mini PMS</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <div class="service-category__header">
+                        <i class="fas fa-university"></i>
+                        <h3>Fixed Income & Bonds</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li><i class="fas fa-certificate"></i>Corporate Bonds</li>
+                        <li><i class="fas fa-landmark"></i>Government Bonds</li>
+                        <li><i class="fas fa-gem"></i>Gold Investment</li>
+                        <li><i class="fas fa-piggy-bank"></i>Fixed Deposits</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <div class="service-category__header">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Market Access</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li><i class="fas fa-eye-slash"></i>Unlisted Shares</li>
+                        <li><i class="fas fa-fire"></i>IPO Services</li>
+                        <li><i class="fas fa-target"></i>Goal-Oriented Investments</li>
+                    </ul>
+                </div>
+
+                <div class="service-category">
+                    <div class="service-category__header">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Insurance Solutions</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li><i class="fas fa-heartbeat"></i>Health Insurance</li>
+                        <li><i class="fas fa-user-shield"></i>Term Life Insurance</li>
+                        <li><i class="fas fa-money-bill-wave"></i>Saving Plans</li>
+                        <li><i class="fas fa-home"></i>Property Insurance</li>
+                        <li><i class="fas fa-lock"></i>Cyber Insurance</li>
+                        <li><i class="fas fa-building"></i>Corporate Insurance</li>
+                        <li><i class="fas fa-ship"></i>Marine Insurance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Trusted Partners</h2>
+                <p class="section-subtitle">Collaborating with industry leaders to provide you the best services</p>
+            </div>
+
+            <div class="partner-categories">
+                <div class="partner-category">
+                    <h3 class="partner-category__title">
+                        <i class="fas fa-chart-line"></i>
+                        Brokerage Partners
+                    </h3>
+                    <div class="partner-list">
+                        <span class="partner-tag">Wealthy</span>
+                        <span class="partner-tag">WhiteOak</span>
+                        <span class="partner-tag">Axis</span>
+                        <span class="partner-tag">HDFC</span>
+                        <span class="partner-tag">SBI</span>
+                        <span class="partner-tag">ICICI</span>
+                        <span class="partner-tag">Nippon</span>
+                    </div>
+                </div>
+
+                <div class="partner-category">
+                    <h3 class="partner-category__title">
+                        <i class="fas fa-heartbeat"></i>
+                        Health Insurance Partners
+                    </h3>
+                    <div class="partner-list">
+                        <span class="partner-tag">Star Health</span>
+                        <span class="partner-tag">Care Health</span>
+                        <span class="partner-tag">Tata AIG</span>
+                        <span class="partner-tag">Manipal Cigna</span>
+                        <span class="partner-tag">Niva Bupa</span>
+                        <span class="partner-tag">HDFC Ergo</span>
+                    </div>
+                </div>
+
+                <div class="partner-category">
+                    <h3 class="partner-category__title">
+                        <i class="fas fa-user-shield"></i>
+                        Life Insurance Partners
+                    </h3>
+                    <div class="partner-list">
+                        <span class="partner-tag">HDFC Life</span>
+                        <span class="partner-tag">Kotak Life</span>
+                        <span class="partner-tag">Bajaj Allianz</span>
+                        <span class="partner-tag">ICICI Prudential</span>
+                        <span class="partner-tag">AXIS Max</span>
+                    </div>
+                </div>
+
+                <div class="partner-category">
+                    <h3 class="partner-category__title">
+                        <i class="fas fa-shield-alt"></i>
+                        General Insurance Partners
+                    </h3>
+                    <div class="partner-list">
+                        <span class="partner-tag">ICICI Lombard</span>
+                        <span class="partner-tag">Zurich Kotak</span>
+                        <span class="partner-tag">Magma HDI</span>
+                        <span class="partner-tag">Digit</span>
+                        <span class="partner-tag">Shriram</span>
+                        <span class="partner-tag">IFFCO TOKIO</span>
+                        <span class="partner-tag">United India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Cosmo Investment</h2>
+                    <p>With over 8 years of experience in financial services, Cosmo Investment stands as your trusted partner for comprehensive investment and insurance solutions. We are proud to be SEBI registered and NISM certified, ensuring the highest standards of compliance and professionalism.</p>
+                    
+                    <p>Our team of experienced professionals is dedicated to helping our 1000+ satisfied clients achieve their financial goals through tailored investment strategies, comprehensive insurance coverage, and expert market guidance.</p>
+
+                    <div class="credentials">
+                        <div class="credential-item">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <strong>SEBI Registered</strong>
+                                <p>Securities and Exchange Board of India authorization for investment advisory services</p>
+                            </div>
+                        </div>
+                        
+                        <div class="credential-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <strong>NISM Certified</strong>
+                                <p>National Institute of Securities Markets certification ensuring professional standards</p>
+                            </div>
+                        </div>
+                        
+                        <div class="credential-item">
+                            <i class="fas fa-id-card"></i>
+                            <div>
+                                <strong>ARN: 313537</strong>
+                                <p>AMFI Registration Number for authorized mutual fund distribution</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>8+ Years</h3>
+                        <p>Industry Experience</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-smile"></i>
+                        <h3>1000+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>25+</h3>
+                        <p>Trusted Partners</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Investment Journey?</h2>
+                <p>Join thousands of satisfied investors who trust Cosmo Investment for their financial success</p>
+                <div class="cta-buttons">
+                    <a href="https://www.wealthy.in/partners/bharath55" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">
+                        <i class="fas fa-user-plus"></i>
+                        Open Account Today
+                    </a>
+                    <a href="#contact" class="btn btn--outline btn--lg">
+                        <i class="fas fa-phone"></i>
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Get in touch with our expert team</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Main Office</h4>
+                            <p>2nd main BTM Layout 1st Stage<br>Bengaluru 560029</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <h4>Branch Office</h4>
+                            <p>Beside Krishna Lodge<br>Opp Old Busstand<br>Bagalkot 587101</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:7019276267">7019276267</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:cosmoinvestment2@gmail.com">cosmoinvestment2@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="service">Service Interest</label>
+                        <select id="service" name="service" class="form-control">
+                            <option value="">Select a service</option>
+                            <option value="stocks">Stocks & Equity</option>
+                            <option value="mutual-funds">Mutual Funds</option>
+                            <option value="insurance">Insurance Services</option>
+                            <option value="bonds">Bonds & Fixed Income</option>
+                            <option value="portfolio">Portfolio Management</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message</label>
+                        <textarea id="message" name="message" class="form-control" rows="4" placeholder="How can we help you?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary btn--full-width">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Cosmo Investment</h3>
+                    <p>Your trusted partner for comprehensive investment and insurance solutions.</p>
+                    <div class="regulatory-info">
+                        <p><strong>SEBI REGISTERED | NISM CERTIFIED</strong></p>
+                        <p>ARN: 313537</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#calculators">Calculators</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Mutual Funds</a></li>
+                        <li><a href="#">Stock Trading</a></li>
+                        <li><a href="#">Insurance</a></li>
+                        <li><a href="#">Portfolio Management</a></li>
+                        <li><a href="#">Fixed Deposits</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> 7019276267</p>
+                        <p><i class="fas fa-envelope"></i> cosmoinvestment2@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> BTM Layout, Bengaluru</p>
+                        <p><i class="fas fa-building"></i> Bagalkot Branch Available</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cosmo Investment. All rights reserved.</p>
+                <p class="disclaimer">Investment in securities market are subject to market risks. Read all the related documents carefully before investing.</p>
+                <p style="margin-top: var(--space-8); font-size: var(--font-size-sm);">Created by Bharath Poojary</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
